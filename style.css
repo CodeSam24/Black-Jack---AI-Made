@@ -1,0 +1,201 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(ellipse at center, #126847 0%, #063b2b 60%, #031c15 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.22);
+    border: 2px solid #c9a44c;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 0 40px #0008;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #c9a44c;
+    padding-bottom: 15px;
+}
+
+h1 {
+    color: #f5d477;
+    font-size: clamp(20px, 4vw, 30px);
+}
+
+.balance {
+    background: #111;
+    border: 1px solid #c9a44c;
+    padding: 12px 18px;
+    border-radius: 10px;
+    color: #f5d477;
+    font-weight: bold;
+}
+
+.hand {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.hand h2 {
+    color: #f5d477;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    min-height: 125px;
+    padding: 10px;
+}
+
+.card {
+    width: 78px;
+    height: 112px;
+    border-radius: 9px;
+    background: #fff;
+    color: #171717;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px;
+    font-size: 22px;
+    font-weight: bold;
+    box-shadow: 0 5px 10px #0005;
+    animation: appear 0.2s ease-out;
+}
+
+.card .suit {
+    align-self: center;
+    font-size: 35px;
+}
+
+.red {
+    color: #d52232;
+}
+
+.hidden-card {
+    background: repeating-linear-gradient(
+        45deg, #173c7a, #173c7a 6px, #254f96 6px, #254f96 12px
+    );
+    border: 3px solid white;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+}
+
+#message {
+    text-align: center;
+    color: #f5d477;
+    font-size: 20px;
+    font-weight: bold;
+    min-height: 30px;
+    margin: 20px 0;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+input {
+    width: 100px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #c9a44c;
+    font-size: 16px;
+}
+
+button {
+    padding: 13px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #f2cb64;
+    color: #15281e;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background: #ffe59a;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.reset {
+    display: block;
+    margin: 20px auto 0;
+    background: #292929;
+    color: white;
+    border: 1px solid #777;
+}
+
+footer {
+    text-align: center;
+    color: #d5c18b;
+    margin-top: 25px;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(-15px) rotate(-5deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+}
+
+@media (max-width: 500px) {
+    .game {
+        padding: 14px;
+    }
+
+    .card {
+        width: 62px;
+        height: 92px;
+        font-size: 18px;
+    }
+
+    .card .suit {
+        font-size: 28px;
+    }
+
+    .controls {
+        gap: 8px;
+    }
+}

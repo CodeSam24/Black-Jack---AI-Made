@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Royale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game">
+        <header>
+            <h1>♠ BLACKJACK ROYALE ♥</h1>
+            <div class="balance">Chips: $<span id="balance">1000</span></div>
+        </header>
+
+        <main>
+            <section class="hand">
+                <h2>DEALER <span id="dealer-score"></span></h2>
+                <div id="dealer-cards" class="cards"></div>
+            </section>
+
+            <div id="message">Place your bet and deal!</div>
+
+            <section class="hand">
+                <h2>YOUR HAND <span id="player-score"></span></h2>
+                <div id="player-cards" class="cards"></div>
+            </section>
+
+            <div class="controls">
+                <label for="bet">Bet amount:</label>
+                <input type="number" id="bet" value="100" min="10" step="10">
+
+                <button id="deal">DEAL</button>
+                <button id="hit" disabled>HIT</button>
+                <button id="stand" disabled>STAND</button>
+            </div>
+
+            <button id="new-game" class="reset">RESET GAME</button>
+        </main>
+
+        <footer>♣ GOOD LUCK AT THE TABLE ♦</footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
