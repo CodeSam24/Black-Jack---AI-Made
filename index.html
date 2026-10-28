@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,32 +11,77 @@
     <div class="game">
         <header>
             <h1>♠ BLACKJACK ROYALE ♥</h1>
-            <div class="balance">Chips: $<span id="balance">1000</span></div>
+
+            <div class="mode-selector">
+                <label for="game-mode">Game Mode</label>
+                <select id="game-mode">
+                    <option value="single">Single Player</option>
+                    <option value="two">Two Players</option>
+                </select>
+            </div>
         </header>
 
         <main>
-            <section class="hand">
+            <section class="hand dealer-hand">
                 <h2>DEALER <span id="dealer-score"></span></h2>
                 <div id="dealer-cards" class="cards"></div>
             </section>
 
-            <div id="message">Place your bet and deal!</div>
+            <div id="message" aria-live="polite" aria-atomic="true">
+                Place your bet and deal!
+            </div>
 
-            <section class="hand">
-                <h2>YOUR HAND <span id="player-score"></span></h2>
-                <div id="player-cards" class="cards"></div>
-            </section>
+            <div class="players" id="players">
+                <section class="hand player-panel" id="player1-panel">
+                    <h2 id="player1-title">YOUR HAND</h2>
+
+                    <div class="player-info">
+                        Chips: $<span id="balance1">1000</span>
+                    </div>
+
+                    <div class="player-score">
+                        Score: <span id="player1-score">0</span>
+                    </div>
+
+                    <div id="player1-cards" class="cards"></div>
+
+                    <div class="bet-area">
+                        <label for="bet1">Bet amount:</label>
+                        <input type="number" id="bet1"
+                               value="100" min="10" step="10">
+                    </div>
+                </section>
+
+                <section class="hand player-panel" id="player2-panel">
+                    <h2>PLAYER 2</h2>
+
+                    <div class="player-info">
+                        Chips: $<span id="balance2">1000</span>
+                    </div>
+
+                    <div class="player-score">
+                        Score: <span id="player2-score">0</span>
+                    </div>
+
+                    <div id="player2-cards" class="cards"></div>
+
+                    <div class="bet-area">
+                        <label for="bet2">Bet amount:</label>
+                        <input type="number" id="bet2"
+                               value="100" min="10" step="10">
+                    </div>
+                </section>
+            </div>
 
             <div class="controls">
-                <label for="bet">Bet amount:</label>
-                <input type="number" id="bet" value="100" min="10" step="10">
-
                 <button id="deal">DEAL</button>
                 <button id="hit" disabled>HIT</button>
                 <button id="stand" disabled>STAND</button>
             </div>
 
-            <button id="new-game" class="reset">RESET GAME</button>
+            <button id="new-game" class="reset">
+                NEW GAME / RESET
+            </button>
         </main>
 
         <footer>♣ GOOD LUCK AT THE TABLE ♦</footer>
